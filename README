@@ -1,0 +1,45 @@
+README for Amos2020_GLOBE git repo
+
+REVISION HISTORY
+27 Feb 2020 - README v1.0 created
+
+CITATION
+Amos, H.M. and M.J. Starke et al., 2020, GLOBE Observer
+Data:2016-2019, in prep. *Check back for updated journal
+information and publication DOI*
+
+CORRESPONDING AUTHOR
+Helen Amos, helen.m.amos@nasa.gov
+
+DISCLAIMER
+This code comes as is without guarantees of any kind. 
+
+CODE DESCRIPTION
+This code generates the analysis and figures for the
+journal article Amos & Starke et al. (2020).
+
+SOFTWARE REQUIREMENTS
+Python 3
+Anaconda 3 distribution, https://www.anaconda.com/distribution/
+
+DEVELOPMENT ENVIRONMENT
+Spyder 3, https://www.spyder-ide.org/
+
+HOW THE CODE IS ORGANIZED
+main.py                : A wrapper script and the main driver
+                         of the code.
+make_fig0*.py          : Scripts to create the figures from
+                         Amos & Starke et al. (2020)
+stats_for_paper.py     : Calculate and print statistics for
+                         Amos & Starke et al. (2020)
+data_common.py         : Read in the observations and set up
+                         global variables for analyzing
+			 observations
+figure_common.py       : Set up global variables for plotting
+globeqa/plotters.py    : Utilities for plotting
+globeqa/tools.py       : Utilities for reading and parsing data
+globeqa/observation.py : Utilities for manipulating observations
+
+HOW TO RUN THE CODE
+1. Open main.py
+2. Run main.py
