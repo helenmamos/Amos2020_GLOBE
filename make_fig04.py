@@ -15,6 +15,8 @@
 # 02 Dec 2019 - HM Amos - Move global variables used by other plotting modules
 #                         to data_common.py. Modify so make_fig02 can be called 
 #                         by main.py            
+# 27 Feb 2020 - HM Amos - Add error check in case startdate is after the 2017
+#                         eclipse         
 #
 # CITATION
 # Amos, H.M. and M.J. Starke et al., 2020, GLOBE Observer
@@ -39,7 +41,7 @@ def mainfig04():
     # - Uncomment this line to plot the figure with GO+GLOBE cloud data
     #obs = all_cld_obs
     
-    # Create a list of dates from 2017 Jan 01 through 2019 May 31.
+    # Create a list of dates 
     day = startdate
     dates = []
     while day <= enddate:
@@ -60,7 +62,7 @@ def mainfig04():
     ax.grid(axis="y")
 
     # Label events with unusually high observation count
-    if 1:
+    if startdate < date(2017,8,26):
         ax.text(date(2017, 8, 26),1600, "North American\nEclipse")
         ax.text(date(2018, 4, 1), 1600, "2018 Spring \nClouds Challenge")
         ax.text(date(2019, 7, 1), 1600, "2019 Fall \nClouds Challenge")

@@ -27,7 +27,7 @@ from globeqa import tools, plotters
 protocols = ["sky_conditions", "land_covers", "mosquito_habitat_mapper", "tree_heights"]
 
 # Define start & end date of daterange
-startdate = date(2016,4,1)    # start of date range, format is YYYY,MM,DD
+startdate = date(2019,11,28)    # start of date range, format is YYYY,MM,DD
 enddate   = date(2019,12,1)   # end   of date range, format is YYYY,MM,DD
 
 # Download GLOBE observations from API for given protocol(s) and date range

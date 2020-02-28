@@ -2,6 +2,7 @@ README for Amos2020_GLOBE git repo
 
 REVISION HISTORY
 27 Feb 2020 - README v1.0 created
+28 Feb 2020 - Update 'How to run the code'
 
 CITATION
 Amos, H.M. and M.J. Starke et al., 2020, GLOBE Observer
@@ -40,6 +41,17 @@ globeqa/plotters.py    : Utilities for plotting
 globeqa/tools.py       : Utilities for reading and parsing data
 globeqa/observation.py : Utilities for manipulating observations
 
-HOW TO RUN THE CODE
+HOW TO RUN THE CODE IN SPYDER
 1. Open main.py
+
 2. Run main.py
+
+   Tip: Click the green arrow in the toolbar ribbon at the top.
+
+3. Open data_common.py
+
+4. In data_common.py, modify startdate and/or enddate to your
+   desired date range (lines 30-31).
+
+   Tip: The GLOBE API limits queries to 1 million observations.
+        If your query fails, try a smaller date range. 

@@ -15,6 +15,10 @@
 # 02 Dec 2019 - HM Amos - Move global variables used by other plotting modules
 #                         to data_common.py. Modify so make_fig02 can be called 
 #                         by main.py            
+# 27 Feb 2020 - HM Amos - Updates to deal with latest API update. Photo URLs
+#                         are now 'null' if a participant didn't submit anything,
+#                         so you have to explicitly check for 'nulls' when
+#                         counting photos.         
 #
 # CITATION
 # Amos, H.M. and M.J. Starke et al., 2020, GLOBE Observer
@@ -50,15 +54,25 @@ def mainfig06():
 
     # For each observation...
     for ob in tqdm(obs5, desc="Sifting observations"):
-        # Count how many photos are included.
-        photos = len(ob.photo_urls)
+        # Count how many photos are included, check for 'nulls'
+#        photos = len(ob.photo_urls)
+        photos = 0
+        if ob.photo_urls['North'] != 'null': photos +=1
+        if ob.photo_urls['East'] != 'null': photos +=1
+        if ob.photo_urls['South'] != 'null': photos +=1
+        if ob.photo_urls['West'] != 'null': photos +=1
+        if ob.photo_urls['Upward'] != 'null': photos +=1
+        if ob.photo_urls['Downward'] != 'null': photos +=1                
 
+        # Increment count 
         vals["{} photo{}".format(photos, "s" if photos != 1 else "")] += 1
 
         # If 5 (of 6) photos were submitted, record which direction was submitted
+        # Check for 'nulls'
         if photos == 5:
             for direction in vals_2.keys():
-                if direction not in ob.photo_urls.keys():
+#                if direction not in ob.photo_urls.keys():
+                if ob.photo_urls[direction] != 'null':
                     vals_2[direction] += 1
 
     # Compute total number of observations for calculating percentages for slice labels
